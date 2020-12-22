@@ -71,12 +71,11 @@ class AgoraCanvas extends React.Component {
 				this.localStream = this.streamInit(uid, $.attendeeMode, $.videoProfile);
 				this.localStream.init(
 					() => {
-						if ($.attendeeMode !== "audience") {
 							this.addStream(this.localStream, true);
 							this.client.publish(this.localStream, (err) => {
 								console.log("Publish local stream error: " + err);
 							});
-						}
+						
 						this.setState({ readyState: true });
 					},
 					(err) => {
