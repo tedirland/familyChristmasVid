@@ -48,6 +48,7 @@ class AgoraCanvas extends React.Component {
 		this.client = {};
 		this.localStream = {};
 		this.screenStream = {};
+		this.remoteStream={}
 		this.shareClient = {};
 		this.shareStream = {};
 		this.state = {
@@ -211,7 +212,7 @@ class AgoraCanvas extends React.Component {
 
 		switch (attendeeMode) {
 			case "audio-only":
-				defaultConfig.video = false;
+				defaultConfig.video = true;
 				break;
 			case "audience":
 				defaultConfig.video = true;
